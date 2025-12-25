@@ -28,8 +28,8 @@
 Once _Docker_ and _Docker Compose_ are installed, clone this repository to your local machine:
 
 ```bash
-git clone https://github.com/RouHim/sons-of-the-forest-container-image.git
-cd sons-of-the-forest-container-image
+git clone https://github.com/ALTERRQ/sotf-server.git
+cd sotf-server
 ```
 
 Before starting the server, create the required folder structure, and adjust the permissions:
