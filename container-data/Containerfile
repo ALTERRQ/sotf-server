@@ -10,7 +10,7 @@ RUN apt-get update && \
 USER $USER
 
 ENV STEAM_APP_ID="2465200"
-ENV STARTUP_COMMAND="wine SonsOfTheForestDS.exe -userdatapath $SERVER_CONFIG_DIR"
+ENV STARTUP_COMMAND="sh $USER_HOME/server.sh"
 
 # Game port
 EXPOSE 8766/udp
@@ -20,3 +20,4 @@ EXPOSE 27016/udp
 EXPOSE 9700/udp
 
 COPY pre.sh $USER_HOME/pre.sh
+COPY server.sh $USER_HOME/server.sh

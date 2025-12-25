@@ -24,3 +24,7 @@ jq '.SkipNetworkAccessibilityTest = true' "$CONFIG_FILE" > "$TEMP_FILE"
 mv "$TEMP_FILE" "$CONFIG_FILE"
 
 echo "✅ Config updated successfully"
+
+if [ "$FILTER_SHADER_AND_MESH_AND_WINE_DEBUG" = "true" ]; then
+    echo "✅ Shader and Mesh warning/error filtering is enabled"
+fi

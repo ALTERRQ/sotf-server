@@ -6,6 +6,7 @@ services:
       dockerfile: Containerfile
     restart: unless-stopped
     environment:
+      FILTER_SHADER_AND_MESH_AND_WINE_DEBUG: "true"
       FAST_BOOT: "false"
     volumes:
       - "./config:/config"
