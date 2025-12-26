@@ -28,3 +28,10 @@ echo "✅ Config updated successfully"
 if [ "$FILTER_SHADER_AND_MESH_AND_WINE_DEBUG" = "true" ]; then
     echo "✅ Shader and Mesh warning/error filtering is enabled"
 fi
+
+if [ "$DO_CUSTOM_ACCESSIBILITY_TEST" = "true" ]; then
+    echo "✅ Custom accessibility test is enabled"
+    echo ""
+    sh "$USER_HOME/accessibility-test.sh"
+fi
+

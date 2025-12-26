@@ -4,7 +4,7 @@ FROM rouhim/steamcmd-wine:latest
 USER root
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
-    jq && \
+    jq ncat && \
     rm -rf /var/lib/apt/lists/*
 
 USER $USER
@@ -21,3 +21,4 @@ EXPOSE 9700/udp
 
 COPY pre.sh $USER_HOME/pre.sh
 COPY server.sh $USER_HOME/server.sh
+COPY accessibility-test.sh $USER_HOME/accessibility-test.sh
