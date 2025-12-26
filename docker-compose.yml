@@ -7,7 +7,7 @@ services:
       dockerfile: Containerfile
     restart: unless-stopped
     environment:
-      DO_CUSTOM_ACCESSIBILITY_TEST: "true"
+      DO_CUSTOM_ACCESSIBILITY_TEST: "false"
       FILTER_SHADER_AND_MESH_AND_WINE_DEBUG: "true"
       FAST_BOOT: "false"
     volumes:

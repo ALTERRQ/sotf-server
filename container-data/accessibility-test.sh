@@ -16,7 +16,7 @@ HANDSHAKE_SUCCESS=false
 
 echo "🔍 Accessibility test (Server side)"
 echo "🤝 Performing UDP Handshake"
-echo "======================="
+echo "=========================="
 echo "Port: $PORT"
 echo "Client expected port: $CLIENT_LISTEN_PORT"
 echo "Timeout: ${TIMEOUT}s/try"

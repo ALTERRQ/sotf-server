@@ -12,7 +12,7 @@ MAX_RETRIES=3
 
 echo "🔍 Accessibility test (Client side)"
 echo "🤝 Performing UDP Handshake"
-echo "======================="
+echo "=========================="
 echo "Server: $SERVER_IP:$PORT"
 echo "Client listening port: $CLIENT_LISTEN_PORT"
 echo
