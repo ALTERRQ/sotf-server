@@ -1,6 +1,7 @@
 services:
-  sons-of-the-forest-server:
-    image: rouhim/sons-of-the-forest-server
+  sotf-server:
+    image: sotf-server:latest
+    container_name: sotf-server
     build:
       context: container-data
       dockerfile: Containerfile
