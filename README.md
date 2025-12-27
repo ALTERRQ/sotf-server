@@ -47,11 +47,11 @@ chmod 777 config/ data/
 To start the Sons of the Forest server, navigate to the cloned repository's directory and use Docker Compose:
 
 ```bash
-docker compose pull
+docker compose build
 docker compose up -d
 ```
 
-This will pull the latest image and start the server in detached mode.
+This will build the latest image and start the server in detached mode.
 
 When starting the server for the first time:
 
@@ -80,6 +80,14 @@ The server checks for updates and validates on every boot per default.
 > To skip update and validation of the server files on every boot,
 > set the `FAST_BOOT` env variable to `true`.
 
+## Log filtering
+
+Although this dedicated server generates numerous unnecessary errors and debug logs, this does not indicate malfunction.
+This project filters out these logs by default.
+
+> To turn off log filtering,
+> set the `FILTER_SHADER_AND_MESH_AND_WINE_DEBUG` env variable to `false`.
+
 ## Configuration
 
 > The server configuration does not differ from the official server configuration.
@@ -103,6 +111,51 @@ The `data/` folder contains the game server data.
 Feel free to modify files in this folder,
 but be aware that the game server must be restarted for changes to take effect.
 The folder can be deleted to reset the game server to its default state.
+
+## Troubleshooting
+
+### Try:
+
+* Try to change server type (far left at the join tab)
+* Direct connect to the server: `Example: 192.168.1.100:27016` (the option bottom right at the join tab)
+* Test via Steam server discovery: (Steam/View/Game Servers), test the LAN discovery or try to add server to favourites by the same syntax as the above suggestion
+* If you can connect inside your LAN, but your friends can't from WAN, you need to setup your routers port forwarding, and firewall rules properly
+* Try to change the ports (they can be used already, or your ISP is blocking them over the WAN) (you will need to change them at 3 places inside this project + your firewall)
+* Use Google, forums, or some AI
+
+If you think everything is set up properly, and you still can't connect to your server, then you could have this problem:
+
+> Bad client side config files.
+* They can prevent you from discovering, and connecting to any LAN server.
+* Deleting them is the solution, but be carefull, because they hold all your settings and game saves
+* You also should temporarely disable Steam Cloud for SOTF, otherwise Steam will just redownload the faulty files
+* They are located at `C:\Users\$USERNAME\AppData\LocalLow\Endnight\SonsOfTheForest` on Windows
+
+I recommend you to:
+
+1. Disable Steam Cloud for SOTF
+2. Turn off Steam compleately
+3. Backup your Saves inside the `SonsOfTheForest` folder into a different location
+4. Screenshot your important settings in the game (if you need them)
+5. Delete the folder
+6. Launch SOTF, check if you can see the server in the LAN section or can connect to it directly, then stop
+7. Copy back your Saves folder
+8. Dial back your important settings
+9. Turn back Steam Cloud
+10. Play
+
+If you still can't connect, then you can try the: `CUSTOM_ACCESSIBILITY_TEST`
+It checks if the server is accessible, to rule out bad networking configuration
+
+Hier is how to do it:
+
+1. Launch the server with `DO_CUSTOM_ACCESSIBILITY_TEST` set to `true` 
+2. When the test appears launch: `./assessibility-test.sh $SERVER_IP` from a client computer and make sure it's not blocked by a firewall (Default inbound port: 18766 for client)
+
+It will try to do a handshake with your server 3 times.
+If it succeeds, then we ruled out bad network configuration.
+
+ ### `If you still have problems try to get help on the UPSTREAM repo or other forums`
 
 # Resources
 
