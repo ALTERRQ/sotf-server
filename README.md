@@ -133,7 +133,7 @@ If you think everything is set up properly, and you still can't connect to your 
 
 I recommend you to:
 
-1. Disable Steam Cloud for SOTF
+1. Disable Steam Cloud for SOTF (This could have saved me 4 days)
 2. Turn off Steam compleately
 3. Backup your Saves inside the `SonsOfTheForest` folder into a different location
 4. Screenshot your important settings in the game (if you need them)
