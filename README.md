@@ -118,9 +118,11 @@ The folder can be deleted to reset the game server to its default state.
 
 * Try to change server type (far left at the join tab)
 * Direct connect to the server: `Example: 192.168.1.100:27016` (the option bottom right at the join tab)
+* Disable any virtual or real network adapters on your pc except the main one (VirtualBox, NordVPN)
 * Test via Steam server discovery: (Steam/View/Game Servers), test the LAN discovery or try to add server to favourites by the same syntax as the above suggestion
 * If you can connect inside your LAN, but your friends can't from WAN, you need to setup your routers port forwarding, and firewall rules properly
 * Try to change the ports (they can be used already, or your ISP is blocking them over the WAN) (you will need to change them at 3 places inside this project + your firewall)
+* Set container to host networking
 * Use Google, forums, or some AI
 
 If you think everything is set up properly, and you still can't connect to your server, then you could have this problem:
