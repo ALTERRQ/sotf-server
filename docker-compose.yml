@@ -1,6 +1,6 @@
 services:
   sotf-server:
-    image: sotf-server:latest
+    image: sotf-server:redloader
     container_name: sotf-server
     build:
       context: container-data

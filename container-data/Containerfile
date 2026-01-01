@@ -4,13 +4,14 @@ FROM rouhim/steamcmd-wine:latest
 USER root
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
-    jq ncat && \
+    jq ncat wget unzip && \
     rm -rf /var/lib/apt/lists/*
 
 USER $USER
 
 ENV STEAM_APP_ID="2465200"
 ENV STARTUP_COMMAND="sh $USER_HOME/server.sh"
+ENV WINEDLLOVERRIDES="version=n,b"
 
 # Game port
 EXPOSE 8766/udp
