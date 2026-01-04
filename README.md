@@ -32,16 +32,6 @@ git clone https://github.com/ALTERRQ/sotf-server.git
 cd sotf-server
 ```
 
-Before starting the server, create the required folder structure, and adjust the permissions:
-
-```bash
-mkdir config/ data/ 
-chmod 777 config/ data/
-```
-
-> The `chmod` command is recommended to avoid permission issues.
-> The main reason is, that the user in the container, most likely differs from the user on the host.
-
 ## Usage
 
 To start the Sons of the Forest server, navigate to the cloned repository's directory and use Docker Compose:
