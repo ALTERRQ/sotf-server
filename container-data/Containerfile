@@ -13,13 +13,6 @@ ENV STEAM_APP_ID="2465200"
 ENV STARTUP_COMMAND="sh $USER_HOME/server.sh"
 ENV WINEDLLOVERRIDES="version=n,b"
 
-# Game port
-EXPOSE 8766/udp
-# Query port
-EXPOSE 27016/udp
-# Blobsync port
-EXPOSE 9700/udp
-
 COPY pre.sh $USER_HOME/pre.sh
 COPY server.sh $USER_HOME/server.sh
 COPY accessibility-test.sh $USER_HOME/accessibility-test.sh

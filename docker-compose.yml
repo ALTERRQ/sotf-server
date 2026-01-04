@@ -13,10 +13,7 @@ services:
     volumes:
       - "./config:/config"
       - "./data:/data"
-    ports:
-      - "0.0.0.0:8766:8766/udp"
-      - "0.0.0.0:27016:27016/udp"
-      - "0.0.0.0:9700:9700/udp"
+    network_mode: "host"
     logging:
       driver: "json-file"
       options:
