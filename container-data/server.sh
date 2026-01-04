@@ -4,14 +4,14 @@ set -e
 
 # Install RedLoader
 if [ -f "/data/SonsOfTheForestDS.exe" ]; then
-    if [ ! -d "_Redloader" ]; then
+    if [ ! -d "/data/_RedLoader" ]; then
         echo ">>> Downloading and unpacking RedLoader.zip (version: $REDLOADER_VERSION)"
         wget -qO /data/RedLoader.zip "https://github.com/ToniMacaroni/RedLoader/releases/download/$REDLOADER_VERSION/RedLoader.zip"
         unzip -qo /data/RedLoader.zip
         rm /data/RedLoader.zip
         echo ">>> Redloader $REDLOADER_VERSION installed"
     else
-        echo ">>> Redloader $REDLOADER_VERSION already installed"
+        echo ">>> Redloader $REDLOADER_VERSION is already installed"
     fi
 else
     echo ">>> Skipping: The game is not yet installed"
